@@ -1,10 +1,15 @@
 import axios from "axios";
 
 const BASEURL = "https://randomuser.me/api/?";
-const SEARCHPARAMS = "results=50";
+const SEARCHPARAMS = "inc=gender,name,nat&results=50";
 
-export default {
+
+
+const searcher = {
     search: function() {
-        return axios.get(BASEURL + SEARCHPARAMS );
+        let result = axios.get(BASEURL + SEARCHPARAMS );
+        return result;
     }
 };
+
+export default searcher;
