@@ -4,7 +4,7 @@ function EmployeeDetail(props) {
     
      console.log(props.employees);
         // const employees = props.employees; 
-        const results  = props.employees.map((employee) =>
+        const people  = props.employees.map((employee) =>
         [<li><div>{employee.name.first}  {employee.name.last}</div><div>{employee.nat} {employee.gender}</div></li>,
          <div> </div> 
         ]
@@ -14,7 +14,7 @@ function EmployeeDetail(props) {
 
     return(
         <div>
-            <ul>{results}</ul>
+            <ul>{people}</ul>
         </div>
     );
 
