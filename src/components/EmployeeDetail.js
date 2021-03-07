@@ -4,16 +4,16 @@ function EmployeeDetail(props) {
     
      console.log(props.employees);
         // const employees = props.employees; 
-        const results = props.employees.map((employee) =>
-        <li><div>{employee.name.first}</div></li>
+        const results  = props.employees.map((employee) =>
+        [<li><div>{employee.name.first}  {employee.name.last}</div><div>{employee.nat} {employee.gender}</div></li>,
+         <div> </div> 
+        ]
+        
         
         );
 
     return(
         <div>
-            {/* <h3>First Name: {props.name.first} Last Name: {props.name.last}</h3>
-            <h3>Gender: {props.gender}</h3>
-            <h3>Nationality: {props.nat}</h3> */}
             <ul>{results}</ul>
         </div>
     );

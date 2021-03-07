@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import searcher from "../utils/API";
-import EmployeeDetail from "./EmployeeDetail";
+import searcher from "../../utils/API";
+import EmployeeDetail from "../../components/EmployeeDetail";
 
 
 
@@ -13,9 +13,9 @@ class Roster extends Component {
     componentDidMount() {
         searcher.search()
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 this.setState({ result: res.data.results })
-                console.log(this.state.result[0].name.first);
+                // console.log(this.state.result[0].name.first);
             })
             .catch(err => console.log(err));
     }
