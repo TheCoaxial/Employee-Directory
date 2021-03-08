@@ -3,6 +3,9 @@ import searcher from "../../utils/API";
 import EmployeeDetail from "../../components/EmployeeDetail";
 import SearchForm from "../../components/SearchForm/index";
 import SearchBtn from "../../components/Btn/index";
+import Container from "../../components/Container/container";
+import Row from "../../components/Row/index";
+import Col from "../../components/Col/index";
 
 
 
@@ -39,10 +42,10 @@ class Roster extends Component {
 
         function filterByNat(person){
             let firstName = person.name.first.toLowerCase();
-            let lastName = person.name.last.toLowerCase();
+            let lastName = person.name.last.replace(/\s/g, "").toLowerCase();
 
-            if (firstName == nat || 
-                lastName == nat  ||
+            if (firstName === nat || 
+                lastName === nat  ||
                 firstName+lastName == nat ) {
                 return true
             }
@@ -75,30 +78,49 @@ class Roster extends Component {
 
     render() {
         return (
+            
+                
+                
+        <Container style={{ marginTop: 30 }}>
             <div>
-                <SearchBtn
-                    onClick = {this.sortByNat}
-                    
+                <Row>
+                    <Col size="md-10">
+                        <SearchForm
+                            handleFormSubmit = {this.handleBtnClick}
+                            handleInputChange = {this.handleInputChange}
+                            search = {this.state.nat}
+                        />
+                        
+                    </Col>
+                        
+            
+                
+                    <Col size="md-2">
+                        <SearchBtn
+                            onClick = {this.sortByNat}
+                            
+                        />
+                        
+                    </Col>
+                </Row>
+            </div>
+            
+            <div>
+            
+
+                {this.state.result ? (
+                <EmployeeDetail 
+                    employees = {this.state.result}
                 />
-                <SearchForm
-                    handleFormSubmit = {this.handleBtnClick}
-                    handleInputChange = {this.handleInputChange}
-                    search = {this.state.nat}
-                />
-                <div>
-
-                    {this.state.result ? (
-                    <EmployeeDetail 
-                        employees = {this.state.result}
-                    />
-                    ) :
-                    (<h3>No results</h3>)}
-
-                </div>
-
-
+                ) :
+                (<h3>No results</h3>)}
 
             </div>
+        </Container>
+
+
+
+            
         )
     }
 

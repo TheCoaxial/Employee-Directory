@@ -4,11 +4,12 @@ import React from "react";
 
 function SearchBtn(props) {
     return (
-      <button 
+      <button type="submit" 
         onClick={props.onClick} 
         className={`card-btn ${props["data-value"]}`} 
         data-value={props["data-value"]} 
-      >Sort by Nationality</button>
+        className="btn btn-info">
+          Sort by Nationality</button>
     );
   }
   
