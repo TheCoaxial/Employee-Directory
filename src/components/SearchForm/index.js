@@ -4,7 +4,7 @@ function SearchForm(props) {
     return (
       <form className="search">
         <div className="form-group">
-          <label htmlFor="Nationality">Nationality:</label>
+          <label htmlFor="Nationality">Name:</label>
           <input
             value={props.search}
             onChange={props.handleInputChange}
@@ -12,7 +12,7 @@ function SearchForm(props) {
             list="nationalites"
             type="text"
             className="form-control"
-            placeholder="Type in a two letter nation code to begin"
+            placeholder="Enter a name to search"
             id="nationalit"
           />
          

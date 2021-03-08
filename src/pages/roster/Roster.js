@@ -35,10 +35,15 @@ class Roster extends Component {
     handleBtnClick = event => {
         event.preventDefault();
         let  result  = this.state.fullList;
-        let nat = this.state.nat;
+        let nat = this.state.nat.replace(/\s/g, "").toLowerCase();
 
         function filterByNat(person){
-            if (person.nat === nat){
+            let firstName = person.name.first.toLowerCase();
+            let lastName = person.name.last.toLowerCase();
+
+            if (firstName == nat || 
+                lastName == nat  ||
+                firstName+lastName == nat ) {
                 return true
             }
             else if(nat === ""){
@@ -54,9 +59,17 @@ class Roster extends Component {
         console.log(sorted)
     }
 
-    EmployeeSearch = event => {
-        this.setState({ result: this.state.fullList })
+    sortByNat = event => {
+        
         console.log(this.state.fullList);
+
+        let sortedByNat = this.state.result.sort(function(a, b){
+            if(a.nat < b.nat) { return -1; }
+            if(a.nat > b.nat) { return 1; }
+            return 0;
+        })
+        
+        this.setState({ result: sortedByNat })
 
     }
 
@@ -64,7 +77,7 @@ class Roster extends Component {
         return (
             <div>
                 <SearchBtn
-                    onClick = {this.EmployeeSearch}
+                    onClick = {this.sortByNat}
                     
                 />
                 <SearchForm
