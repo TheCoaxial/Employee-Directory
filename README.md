@@ -8,7 +8,7 @@ The Roster page populates a lightly styled table with data gathered from the afo
 [Live Site](https://thecoaxial.github.io/Unit-19-React-Homework-Employee-Directory/)
 
 # Demo GIF
-
+![Gid](Demo.Roster.gif)
 
 # Future Plans
 - Fix the semi wonky deployment
