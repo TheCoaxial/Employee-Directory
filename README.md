@@ -1,5 +1,5 @@
 # Unit-19-React-Homework-Employee-Directory
-The purpose of this project was to familiarize myself with REACT. The assignment was to create a table that was populated with data gathered from the [Random User API](https://randomuser.me/) API. This app contains a very basic home page as a place holder and a Roster page that actually satisfies the acceptance criteria of the assignment. 
+The purpose of this project was to familiarize myself with REACT. The objective was to create a table that was populated with data gathered from the [Random User API](https://randomuser.me/) API. This app contains a very basic home page as a place holder and a Roster page that actually satisfies the objective. 
 
 The Roster page populates a lightly styled table with data gathered from the aforementioned API. A user can sort the table by Nationality or filter by name using the search field. 
 
